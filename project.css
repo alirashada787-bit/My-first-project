@@ -1,0 +1,49 @@
+
+.A{
+
+    width: calc(100%-20%);
+    height: 700px;
+    background-color: beige;
+    padding: 60PX;
+}
+
+h3{
+    background-color: rgb(214, 182, 243);
+    width: fit-content;
+    padding: 10px 15px; 
+    margin-bottom: 50px;
+    margin-left: -15px;
+    border-radius: 5px;
+}
+
+.lable2{
+    margin-right: 8px;
+}
+
+.answer{
+    height: 50px;
+}
+form{
+    margin: 20px;
+}
+
+button{
+width: fit-content;
+padding: 8px 20px;
+background-color: rgb(234, 243, 115);
+border-radius: 5px;
+cursor: pointer;
+margin-left: 35px;
+margin-top: 25px;
+font-weight: bold;
+}
+
+.A2 {
+
+margin-bottom: 150PX;
+}
+
+button:hover{
+    background-color: rgb(155, 103, 7);
+}
+
