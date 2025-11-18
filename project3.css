@@ -1,0 +1,42 @@
+.A{
+    background-color: rgb(247, 241, 226);
+    width: calc(100%-30%);
+    height: 500PX;
+    border: 1PX solid ;
+}
+
+form{
+    margin: 20px;
+}
+
+input{
+    background-color: rgb(174, 174, 230);
+    margin-left: 7PX;
+}
+
+.l1{
+    display: block;
+
+}
+
+#complaint_area{
+margin-top: -15px;
+    margin-left: 80px;
+  background-color: rgb(174, 174, 230); 
+}
+
+button{
+    display: block;
+    margin: 100px auto;
+    width: 150px;
+    padding: 10px;
+    background-color: rgb(174, 174, 230); 
+    color:rgb(14, 24, 26);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: bisque;
+}
