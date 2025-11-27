@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الأسئلة الشائعة (FAQ Dynamic Form)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* كلاس إضافي لتطبيق تنسيق إطار أبيض حول النموذج بالكامل */
+        .faq-container {
+            border: 1px solid #f0f0f0; /* حدود خفيفة جداً */
+            padding: 2rem; /* مسافة داخلية */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 p-6 font-sans">
+
+    <div class="faq-container max-w-2xl mx-auto shadow-xl bg-white rounded-lg">
+
+        <div class="mb-8 pb-6 border-b border-gray-200">
+            <h2 class="text-xl font-semibold mb-6">Add New FAQ</h2>
+
+            <div class="mb-4">
+                <label for="new-question" class="block text-gray-700 font-medium mb-1.5">Question :</label>
+                <input
+                    type="text"
+                    id="new-question"
+                    placeholder="أدخل السؤال الجديد هنا..."
+                    class="w-full border border-gray-300 bg-blue-50 py-2 px-3 rounded-md focus:ring-blue-500 focus:border-blue-500 transition duration-150"
+                >
+            </div>
+
+            <div class="mb-6">
+                <label for="new-answer" class="block text-gray-700 font-medium mb-1.5">Answer :</label>
+                <textarea
+                    id="new-answer"
+                    oninput="autoResize(this)"
+                    placeholder="أدخل إجابتك هنا"
+                    class="w-full resize-none overflow-hidden border border-gray-300 bg-blue-50 py-2 px-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-150"
+                    rows="1"
+                ></textarea>
+            </div>
+
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md shadow-lg transition duration-150 ease-in-out">
+                Add
+            </button>
+        </div>
+
+        <div>
+            <h2 class="text-xl font-semibold mb-6">Update FAQ</h2>
+
+            <div class="mb-4">
+                <label for="update-question" class="block text-gray-700 font-medium mb-1.5">Question :</label>
+                <input
+                    type="text"
+                    id="update-question"
+                    value="Can a ticket be reopened?"
+                    readonly
+                    class="w-full text-white font-medium bg-blue-600 border border-blue-600 py-2 px-3 rounded-md"
+                >
+            </div>
+
+            <div class="mb-6">
+                <label for="update-answer" class="block text-gray-700 font-medium mb-1.5">Answer :</label>
+                 <input
+                    type="text"
+                    id="update-question"
+                    value="Yes,if the issue is not resolved"
+                    readonly
+                    class="w-full text-white font-medium bg-blue-600 border border-blue-600 py-2 px-3 rounded-md"
+                >
+            </div>
+
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md shadow-lg transition duration-150 ease-in-out">
+                Update
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        /**
+         * دالة لضبط ارتفاع حقل النص (textarea) ليتناسب مع محتواه.
+         * تُستدعى هذه الدالة عند إدخال أي نص (oninput).
+         */
+        function autoResize(element) {
+            // 1. نضبط الارتفاع مؤقتاً على 'auto' لضمان حساب الارتفاع الفعلي بدقة.
+            element.style.height = 'auto';
+            
+            // 2. نحدد الارتفاع ليكون مساوياً لـ scrollHeight، وهو الارتفاع المطلوب لعرض كل المحتوى.
+            element.style.height = (element.scrollHeight) + 'px';
+        }
+
+        /**
+         * عند تحميل الصفحة، نطبق الدالة لضبط الارتفاع الأولي للحقول التي تحتوي على نص مسبقاً.
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            const dynamicFields = document.querySelectorAll('textarea');
+            dynamicFields.forEach(autoResize);
+        });
+    </script>
+
+</body>
+</html>

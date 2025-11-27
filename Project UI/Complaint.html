@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="itr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج الشكاوى</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* تعريف لون مخصص للخلفية ليتناسب مع الصورة المرفقة */
+        /* يمكن أيضاً استخدام bg-amber-50 أو bg-yellow-50 في Tailwind مباشرة */
+        .custom-beige {
+            background-color: #f7f1e3; /* لون بيج فاتح مشابه للصورة */
+        }
+        /* تعريف لون مخصص لحقول الإدخال ليتناسب مع الصورة المرفقة */
+        .custom-purple-box {
+            background-color: #d1c4e9; /* لون بنفسجي فاتح مشابه للصورة */
+            border: 1px solid #7e57c2; /* حدود خفيفة */
+        }
+        .custom-purple-box::placeholder {
+        /* 1. زيادة درجة اللون (جعل النص أغمق) */
+        color: #5d4037; /* لون بني داكن أو رمادي داكن واضح */
+        
+        /* 2. زيادة سمك الخط (جعل الخط عريضاً) */
+        font-weight: 300; /* قيمة متوسطة بين العادي (200) والغليظ (500) */
+        
+        /* 3. تعديل الشفافية (مهم في بعض المتصفحات) */
+        opacity: 1; 
+    }
+    </style>
+</head>
+<body class="custom-beige min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-lg p-6 bg-white shadow-xl rounded-lg border border-gray-200">
+        <form action="#" method="POST" class="space-y-6">
+            
+            <div class="flex flex-col">
+                <label for="ticket_id" class="text-lg font-medium mb-2">
+                    Ticket ID :
+                </label>
+                <input 
+                    type="text" 
+                    id="ticket_id" 
+                    name="ticket_id" 
+                    class="custom-purple-box h-10 px-3 rounded-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    placeholder="ادخل رقم الشكوى ...."
+                >
+            </div>
+
+            <div class="flex flex-col">
+                <label for="complaint" class="text-lg font-medium mb-2">
+                    Complaint :
+                </label>
+                <textarea 
+                    id="complaint" 
+                    name="complaint" 
+                    rows="8" 
+                    class="custom-purple-box p-3 rounded-sm resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    style="height: 150px;" /* تحديد ارتفاع ثابت ليتناسب مع الصورة */
+                    placeholder=""
+                ></textarea>
+            </div>
+            
+            <div class="flex justify-center pt-4">
+                <button 
+                    type="submit" 
+                    class="bg-indigo-400 hover:bg-indigo-500 font-bold py-2 px-8 rounded-lg shadow-md transition duration-150 transform hover:scale-105"
+                    style="background-color: #a8a0d4; border: 1px solid #7e57c2; color: #333;" /* ألوان مخصصة للزر لتقليد الصورة */
+                >
+                    Submit
+                </button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
